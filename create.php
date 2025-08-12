@@ -26,14 +26,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <?php
+
+    include 'db.php';
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $name = $_POST['nome'];
+    $email = $_POST['email'];
+
+    $sql = " INSERT INTO usuarios (name,email) VALUE ('$name','$email')";
+
+    if ($conn->query($sql) === true) {
+        echo "Novo registro criado com sucesso.";
+    } else {
+        echo "Erro " . $sql . '<br>' . $conn->error;
+    }
+    $conn->close();
+    }
+
+    ?>
+
     <form method="POST" action="create.php" id="formulario">
 
         <label for="name">Nome:</label>
-        <input type="text" name="nome" required>
+        <input class="inputs" type="text" name="nome" required>
 
         <label for="email">Email:</label>
         <input type="email" name="email" required>
