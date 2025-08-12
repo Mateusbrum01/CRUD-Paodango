@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <form method="POST" action="create.php">
+    <form method="POST" action="create.php" id="formulario">
 
         <label for="name">Nome:</label>
         <input type="text" name="nome" required>
