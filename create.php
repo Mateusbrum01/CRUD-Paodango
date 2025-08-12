@@ -4,7 +4,7 @@ include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $name = $_POST['name'];
+    $name = $_POST['nome'];
     $email = $_POST['email'];
 
     $sql = " INSERT INTO usuarios (name,email) VALUE ('$name','$email')";
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST" action="create.php">
 
         <label for="name">Nome:</label>
-        <input type="text" name="name" required>
+        <input type="text" name="nome" required>
 
         <label for="email">Email:</label>
         <input type="email" name="email" required>

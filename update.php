@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $name = $_POST['name'];
+    $name = $_POST['nome'];
     $email = $_POST['email'];
 
     $sql = "UPDATE usuarios SET name ='$name',email ='$email' WHERE id=$id";
@@ -43,7 +43,7 @@ $row = $result -> fetch_assoc();
     <form method="POST" action="update.php?id=<?php echo $row['id'];?>">
 
         <label for="name">Nome:</label>
-        <input type="text" name="name" value="<?php echo $row['name'];?>" required>
+        <input type="text" name="nome" value="<?php echo $row['nome'];?>" required>
 
         <label for="email">Email:</label>
         <input type="email" name="email" value="<?php echo $row['email'];?>" required>
