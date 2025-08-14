@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "atividade_5_db";
+$dbname = "padangodb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
